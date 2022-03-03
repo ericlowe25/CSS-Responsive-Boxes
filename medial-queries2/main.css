@@ -1,3 +1,10 @@
+:root{
+  --a-color:var(--a-color)
+}
+
+
+
+
 body {
   background: papayawhip;
 }
