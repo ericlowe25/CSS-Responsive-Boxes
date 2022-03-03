@@ -1,3 +1,9 @@
 body {
   background: blanchedalmond;
 }
+
+.contianer {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
