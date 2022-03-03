@@ -6,4 +6,20 @@ body {
   display: flex;
   height: 100vh;
   flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.contianer>*{/*selects all children in container*/
+  min-height: 20%;
+  padding: 0;
+}
+.a {
+  background-color: var(--a-color);
+  flex-grow: 2;
+  width: 100%;
+}
+.b {
+  background-color: var(--b-color);
+  flex-grow: 6;
 }
