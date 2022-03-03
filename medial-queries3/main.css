@@ -1,3 +1,135 @@
+:root{
+  --a-color: #bff4cb; /*page-sage*/
+  --b-color: #84a98c; /*sage*/
+  --c-color: #52796f; /*dusty-emerald*/
+  --d-color: #354f52; /*deep-emerald*/
+  --e-color: #2F3e46; /*night-forest*/
+  --f-color: #8fbc8b; /*dark-seagreen*/
+  --g-color: #6b8e23; /*olive-drab*/
+  --h-color: #bdb76b; /*dark-khaki*/ 
+
+  --border-color: red;
+}
+
+*{
+  border: 1px solid var(--border-color) ;
+  text-align: center;
+  vertical-align: super;
+  }
+
 body {
   background: peachpuff;
+}
+
+.container {
+  display: flex;
+  height: 100vh;  
+  flex-direction: row;
+  flex-wrap: wrap;    
+}
+
+.container > *{ /*selects all children in container*/  
+  padding: 0;
+  margin: .5rem;  
+}
+
+.a {
+  background-color: var(--a-color);  
+  width: 100%;
+  height: calc(33% - 1rem);
+  order: 0;
+}
+
+.b {
+  background-color: var(--b-color);
+}
+
+.c {
+  background-color: var(--c-color);
+}
+
+.d {
+  background-color: var(--d-color);
+}
+
+.e {
+  background-color: var(--e-color);
+}
+
+.f {
+  background-color: var(--f-color);
+}
+
+.g {
+  background-color: var(--g-color);
+}
+
+.h {
+  background-color: var(--h-color);
+}
+
+.b, .c, .d {
+  width: calc(22%);
+  min-width: 220px;
+  height: calc(33% - 1.25rem);
+  order: 1;
+}
+  
+
+.e, .f, .g{
+  position: relative;
+  width: calc(22%);
+  min-width: 220px;
+  height: calc(33% - 1.25rem);
+  bottom: calc(33% - .25rem);
+  order: 3;
+}
+
+.h {
+  width: calc(30% - 2rem);;
+  flex-grow: 1;
+  height: calc(66% - 1.5rem);
+  bottom: calc(33%);
+  order: 2;
+}
+
+@media (max-width: 1040px) {
+  .container{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+  .container > *{
+  width: auto;
+  min-width: auto;  
+  position: inherit;
+  }
+  
+  .a {  
+  width: 100%;
+  height: calc(15% - 2rem);
+  order: 1;
+  }
+
+  .b, .c, .d {
+    width: calc(33% - 2rem);
+    height: calc(15% - 2rem);
+    flex-grow: 1;
+    order: 2; 
+  }
+    
+  
+  .e, .f, .g{
+    width: calc(33% - 2rem);
+    height: calc(15% - 2rem);
+    flex-grow: 1;
+    order: 3;
+  }
+
+  .h {    
+    width: 100%;
+    height: calc(60% - 2rem);;
+    order: 4;
+    flex-grow: 1;
+  }
 }

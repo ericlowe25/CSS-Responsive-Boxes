@@ -1,10 +1,104 @@
 :root{
-  --a-color:var(--a-color)
+  --a-color: #bff4cb; /*page-sage*/
+  --b-color: #84a98c; /*sage*/
+  --c-color: #52796f; /*dusty-emerald*/
+  --d-color: #354f52; /*deep-emerald*/
+  --e-color: #2F3e46; /*night-forest*/
+  --f-color: #8fbc8b; /*dark-seagreen*/
+
+  --border-color: red;
 }
 
-
-
+*{
+  border: 1px solid var(--border-color) ;
+  text-align: center;
+  vertical-align: super;
+  }
 
 body {
   background: papayawhip;
+}
+
+.container {
+  display: flex;
+  height: 100vh;  
+  flex-direction: row;
+  flex-wrap: wrap;  
+}
+
+.container > *{ /*selects all children in container*/  
+  padding: 0;
+  margin: .5rem;  
+}
+
+.a {
+  background-color: var(--a-color);  
+  width: 100%;
+  height: calc(33% - 1rem);
+}
+
+.b {
+  background-color: var(--b-color);
+  width: calc(78% - 1.5rem);
+  height: calc(33% - 1rem);
+}
+
+.c {
+  background-color: var(--c-color);
+}
+
+.d {
+  background-color: var(--d-color);
+}
+
+.e {
+  background-color: var(--e-color);
+}
+
+.c, .d, .e {
+  width: calc(25.75% - 1rem);
+  height: calc(33% - 1.5rem);
+}
+  
+
+.f {
+  background-color: var(--f-color);  
+  width: calc(20% - 2rem);;
+  flex-grow: 1;
+  height: calc(66% - 1.5rem);
+  bottom: calc(33%);
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .container{
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+  .container > *{
+  width: auto;
+  }
+  
+  .a {  
+  width: 100%;
+  height: 20%;
+  }
+
+  .b {
+    width: 100%;
+    height: 40%;
+  }
+
+  .c, .d, .e {
+    width: auto;
+    flex-grow: 1;
+    height: 15%;
+  }
+
+  .f {
+    position: inherit;
+    width: 100%;
+    height: 15%;
+  }
 }
